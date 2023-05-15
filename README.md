@@ -19,24 +19,6 @@
 - [ ] 앱 개발
 - [ ] 리모컨의 키코드 알아내기
 
-## 작동 구조 도식화
-```kroki
-d2
-
-direction: right
-
-OrangeBoard: {
-	wifi module -> compute -> IR module
- }
-
-스마트폰 -> OrangeBoard.wifi module: 2.4ghz 통신
-OrangeBoard.IR module -> TV: 적외선 통신
-OrangeBoard.IR module -> 에어컨: 적외선 통신
-OrangeBoard.IR module -> "기타등등...": 적외선 통신
-OrangeBoard.compute -> motor: 직접 연결
-motor -> switch
-```
-
 ## 참조 링크
 - https://blog.naver.com/PostView.nhn?blogId=kimgooni&logNo=221730957657
 
