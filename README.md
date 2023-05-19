@@ -20,7 +20,8 @@
 - [ ] 리모컨의 키코드 알아내기
 
 ## 참조 링크
+- https://diy-dev-design.tistory.com/65
 - https://blog.naver.com/PostView.nhn?blogId=kimgooni&logNo=221730957657
-
+- https://juahnpop.tistory.com/66
 
 
