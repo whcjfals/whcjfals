@@ -13,9 +13,9 @@ const uint16_t kIrLed = D7;
 IRsend irsend(kIrLed); 
 
 //wifi 아이디
-const char* ssid = "FREE_U+zone";
+const char* ssid = "BH_";
 //wifi 비번
-const char* password = "";
+const char* password = "testwifi4321";
 //서버 주소
 const char* mqtt_server = "broker.mqtt-dashboard.com";
 
@@ -69,18 +69,56 @@ void callback(char* topic, byte* payload, unsigned int length) {
   //리모컨 신호를 발사한다.
   //이 4개의 키코드는 전원 키코드임 sendNEC라는 instance함수는 발사하는 함수
     
-  if(cmd.equals("Tv on")){
+  // if(cmd.equals("Tv on")){
+  //   irsend.sendNEC(0x20DF10EF);
+  //   irsend.sendNEC(0xCA0F1F87);
+  //   irsend.sendNEC(0x5B0310EF);
+  //   irsend.sendNEC(0xC181890F);
+  // }else if(cmd.equals("Tv off")){
+  //   irsend.sendNEC(0x20DF10EF);
+  //   irsend.sendNEC(0xCA0F1F87);
+  //   irsend.sendNEC(0x5B0310EF);
+  //   irsend.sendNEC(0xC181890F);
+  // }
+
+  // LG 리모컨 기준으로 수정
+  if(cmd.equals("Tv on/off")) {
     irsend.sendNEC(0x20DF10EF);
-    irsend.sendNEC(0xCA0F1F87);
-    irsend.sendNEC(0x5B0310EF);
-    irsend.sendNEC(0xC181890F);
-  }else if(cmd.equals("Tv off")){
-    irsend.sendNEC(0x20DF10EF);
-    irsend.sendNEC(0xCA0F1F87);
-    irsend.sendNEC(0x5B0310EF);
-    irsend.sendNEC(0xC181890F);
+  }
+  
+  if(cmd.equals("Tv Source")) {
+    irsend.sendNEC(0x20DFD02F);
   }
 
+  if(cmd.equals("Tv vol Up")) {
+    irsend.sendNEC(0x20DF40BF);
+  }
+  if(cmd.equals("Tv vol Down")) {
+    irsend.sendNEC(0x20DFC03F);
+  }
+
+  if(cmd.equals("Tv ch Up")) {
+    irsend.sendNEC(0x20DF40BF);
+  }
+  if(cmd.equals("Tv ch Down")) {
+    irsend.sendNEC(0x20DFC03F);
+  }
+
+  if(cmd.equals("Tv Up")) {
+    irsend.sendNEC(0x20DFC03F);
+  }
+  if(cmd.equals("Tv Down")) {
+    irsend.sendNEC(0x20DFC03F);
+  }
+  if(cmd.equals("Tv Left")) {
+    irsend.sendNEC(0x20DFC03F);
+  }
+  if(cmd.equals("Tv Right")) {
+    irsend.sendNEC(0x20DFC03F);
+  }
+  if(cmd.equals("Tv Ok")) {
+    irsend.sendNEC(0x20DFC03F);
+  }
   
  
 }
