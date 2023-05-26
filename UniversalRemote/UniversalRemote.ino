@@ -14,8 +14,10 @@ IRsend irsend(kIrLed);
 
 //wifi 아이디
 const char* ssid = "BH_";
+// const char* ssid = "";
 //wifi 비번
 const char* password = "testwifi4321";
+// const char* password = "";
 //서버 주소
 const char* mqtt_server = "broker.mqtt-dashboard.com";
 
@@ -96,28 +98,32 @@ void callback(char* topic, byte* payload, unsigned int length) {
   if(cmd.equals("Tv vol Down")) {
     irsend.sendNEC(0x20DFC03F);
   }
+  if(cmd.equals("Tv vol Mute")) {
+    irsend.sendNEC(0x20DF906F);
+  }
+
 
   if(cmd.equals("Tv ch Up")) {
-    irsend.sendNEC(0x20DF40BF);
+    irsend.sendNEC(0x20DF00FF);
   }
   if(cmd.equals("Tv ch Down")) {
-    irsend.sendNEC(0x20DFC03F);
+    irsend.sendNEC(0x20DF807F);
   }
 
   if(cmd.equals("Tv Up")) {
-    irsend.sendNEC(0x20DFC03F);
+    irsend.sendNEC(0x20DF02FD);
   }
   if(cmd.equals("Tv Down")) {
-    irsend.sendNEC(0x20DFC03F);
+    irsend.sendNEC(0x20DF827D);
   }
   if(cmd.equals("Tv Left")) {
-    irsend.sendNEC(0x20DFC03F);
+    irsend.sendNEC(0x20DFE01F);
   }
   if(cmd.equals("Tv Right")) {
-    irsend.sendNEC(0x20DFC03F);
+    irsend.sendNEC(0x20DF609F);
   }
   if(cmd.equals("Tv Ok")) {
-    irsend.sendNEC(0x20DFC03F);
+    irsend.sendNEC(0x20DF22DD);
   }
   
  
